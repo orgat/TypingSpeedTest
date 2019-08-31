@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Typing Speed Test</title>
+  </head>
+  <body>
+    <header>
+      <h1>Typing Speed Test</h1>
+      <h2>
+        Type in the sentence below <strong>exactly</strong> as it appears.<br />
+        The result will show upon successful completion of the sentence.
+      </h2>
+    </header>
+    <main>
+      <div class="sentence"></div>
+      <textarea
+        class="input"
+        placeholder="The clock starts when you begin typing."
+      ></textarea>
+      <div class="stats">
+        <div class="timer">00:00:00</div>
+        <div class="performance">
+          <p class="overall-speed"></p>
+          <p class="average-speed"></p>
+        </div>
+      </div>
+      <button id="reset">Restart</button>
+    </main>
+    <script src="script.js"></script>
+  </body>
+</html>
