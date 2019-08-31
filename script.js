@@ -88,7 +88,6 @@ function formatWithZero(val) {
 }
 
 function incTimer() {
-  console.log(timer);
   timer++;
   let minutes = formatWithZero(Math.floor(timer / 100 / 60));
   let seconds = formatWithZero(Math.floor(timer / 100) % 60);
