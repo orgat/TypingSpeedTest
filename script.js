@@ -51,18 +51,18 @@ function finish() {
   clearInterval(timerInterval);
   inputElem.style.borderColor = '#00FF00';
 
-  let seconds = Math.floor(timer / 100) % 60;
-  let minutes = Math.floor(timer / 100 / 60);
-  let numOfCharacters = sentenceElem.textContent.length;
+  var seconds = Math.floor(timer / 100) % 60;
+  var minutes = Math.floor(timer / 100 / 60);
+  var numOfCharacters = sentenceElem.textContent.length;
 
-  let secondsText;
+  var secondsText;
   if (seconds > 1) {
     secondsText = `${seconds} seconds`;
   } else {
     secondsText = `${seconds} second`;
   }
 
-  let minutesText;
+  var minutesText;
   if (minutes > 1) {
     minutesText = `${minutes} minutes and `;
   } else if (minutes === 1) {
@@ -71,9 +71,9 @@ function finish() {
     minutesText = '';
   }
 
-  let overallSpeed = `It took you ${minutesText}${secondsText} to type ${numOfCharacters} characters.`;
+  var overallSpeed = `It took you ${minutesText}${secondsText} to type ${numOfCharacters} characters.`;
 
-  let averageSpeed = `Your average typing speed was ${(
+  var averageSpeed = `Your average typing speed was ${(
     numOfCharacters /
     (timer / 100)
   ).toFixed(2)} characters per second.`;
@@ -89,9 +89,9 @@ function formatWithZero(val) {
 
 function incTimer() {
   timer++;
-  let minutes = formatWithZero(Math.floor(timer / 100 / 60));
-  let seconds = formatWithZero(Math.floor(timer / 100) % 60);
-  let hundredthsOfSeconds = formatWithZero(timer % 100);
+  var minutes = formatWithZero(Math.floor(timer / 100 / 60));
+  var seconds = formatWithZero(Math.floor(timer / 100) % 60);
+  var hundredthsOfSeconds = formatWithZero(timer % 100);
   timerElem.textContent = `${minutes}:${seconds}:${hundredthsOfSeconds}`;
 }
 
