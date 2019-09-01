@@ -42,13 +42,15 @@ function randomizeSentence() {
 }
 
 function begin() {
-  if (inputElem.value.length === 0) {
+  if (timerInterval === null) {
     timerInterval = setInterval(incTimer, 10);
   }
 }
 
 function finish() {
   clearInterval(timerInterval);
+  timerInterval = null;
+
   inputElem.style.borderColor = '#00FF00';
 
   var seconds = Math.floor(timer / 100) % 60;
@@ -120,13 +122,13 @@ function reset() {
   timerElem.textContent = '00:00:00';
   timer = 0;
   clearInterval(timerInterval);
+  timerInterval = null;
   inputElem.value = '';
   inputElem.style.borderColor = 'white';
 }
 
-inputElem.addEventListener('keypress', begin);
+inputElem.addEventListener('input', begin);
 inputElem.addEventListener('keyup', checkInput);
-inputElem.addEventListener('input', checkInput);
 resetBtn.addEventListener('click', reset);
 
 randomizeSentence();
