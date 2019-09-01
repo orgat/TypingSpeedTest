@@ -57,26 +57,32 @@ function finish() {
 
   var secondsText;
   if (seconds > 1) {
-    secondsText = `${seconds} seconds`;
+    secondsText = seconds + ' seconds';
   } else {
-    secondsText = `${seconds} second`;
+    secondsText = seconds + ' second';
   }
 
   var minutesText;
   if (minutes > 1) {
-    minutesText = `${minutes} minutes and `;
+    minutesText = minutes + ' minutes and ';
   } else if (minutes === 1) {
-    minutesText = `${minutes} minute and `;
+    minutesText = minutes + ' minute and ';
   } else {
     minutesText = '';
   }
 
-  var overallSpeed = `It took you ${minutesText}${secondsText} to type ${numOfCharacters} characters.`;
+  var overallSpeed =
+    'It took you ' +
+    minutesText +
+    secondsText +
+    ' to type ' +
+    numOfCharacters +
+    ' characters.';
 
-  var averageSpeed = `Your average typing speed was ${(
-    numOfCharacters /
-    (timer / 100)
-  ).toFixed(2)} characters per second.`;
+  var averageSpeed =
+    'Your average typing speed was ' +
+    (numOfCharacters / (timer / 100)).toFixed(2) +
+    ' characters per second.';
 
   overallSpeedElem.textContent = overallSpeed;
   averageSpeedElem.textContent = averageSpeed;
@@ -84,15 +90,16 @@ function finish() {
 }
 
 function formatWithZero(val) {
-  return val < 10 ? `0${val}` : val;
+  return val < 10 ? '0' + val : val;
 }
 
 function incTimer() {
+  console.log(timer);
   timer++;
   var minutes = formatWithZero(Math.floor(timer / 100 / 60));
   var seconds = formatWithZero(Math.floor(timer / 100) % 60);
   var hundredthsOfSeconds = formatWithZero(timer % 100);
-  timerElem.textContent = `${minutes}:${seconds}:${hundredthsOfSeconds}`;
+  timerElem.textContent = minutes + ':' + seconds + ':' + hundredthsOfSeconds;
 }
 
 function checkInput() {
