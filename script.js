@@ -126,6 +126,7 @@ function reset() {
 
 inputElem.addEventListener('keypress', begin);
 inputElem.addEventListener('keyup', checkInput);
+inputElem.addEventListener('input', checkInput);
 resetBtn.addEventListener('click', reset);
 
 randomizeSentence();
